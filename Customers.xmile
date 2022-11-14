@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0">
+	<header>
+		<product version="1.0" lang="en">Vensim</product>
+		<vendor>Ventana Systems, Inc.</vendor>
+		<created>
+		</created>
+		<modified>
+		</modified>
+		<name>
+		</name>
+		<caption>
+		</caption>
+	</header>
+	<sim_specs method="RK4" time_units="Year">
+		<start> 2015</start>
+		<stop> 2030</stop>
+		<dt> 0.25</dt>
+	</sim_specs>
+	<model>
+		<variables>
+			<stock name="Customers">
+				<units>Person</units>
+				<doc></doc>
+					<eqn>
+					10000
+					</eqn>
+					<inflow>
+					Recruits
+					</inflow>
+					<outflow>
+					Losses
+					</outflow>
+			</stock>
+			<aux name="Losses">
+				<units>Person/Year</units>
+				<doc></doc>
+					<eqn>
+	Customers*Decline_Fraction					</eqn>
+			</aux>
+			<aux name="Recruits">
+				<units>Person/Year</units>
+				<doc></doc>
+					<eqn>
+	Customers*Growth_Fraction					</eqn>
+			</aux>
+			<aux name="Decline_Fraction">
+				<units>1/Year</units>
+				<doc></doc>
+					<eqn>
+	0.03					</eqn>
+			</aux>
+			<aux name="Growth_Fraction">
+				<units>1/Year</units>
+				<doc></doc>
+					<eqn>
+	0.07					</eqn>
+			</aux>
+		</variables>
+	</model>
+</xmile>
